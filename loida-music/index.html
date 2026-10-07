@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Loida Music</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/estilos.css">
+
+
+</head>
+
+<body>
+
+
+<!-- ==========================================
+     APLICACIÓN
+=========================================== -->
+
+<main class="app">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div>
+            <span class="saludo">MI BIBLIOTECA</span>
+            <h1>Loida Music</h1>
+        </div>
+
+        <button class="btn-opciones" id="btnOpciones">
+            ⋯
+        </button>
+
+    </header>
+
+
+    <!-- BUSCADOR -->
+    <section class="buscador">
+
+        <span class="icono-busqueda">⌕</span>
+
+        <input
+            type="text"
+            id="buscadorCanciones"
+            placeholder="Buscar canciones..."
+        >
+
+    </section>
+
+
+    <!-- ACCESOS RÁPIDOS -->
+    <section class="accesos">
+
+        <button class="acceso activo" data-filtro="todas">
+            <span>🎵</span>
+            <small>Todas</small>
+        </button>
+
+        <button class="acceso" data-filtro="favoritas">
+            <span>♡</span>
+            <small>Favoritas</small>
+        </button>
+
+        <button class="acceso" data-filtro="recientes">
+            <span>◷</span>
+            <small>Recientes</small>
+        </button>
+
+    </section>
+
+
+    <!-- LISTA DE CANCIONES -->
+    <section class="biblioteca">
+
+        <div class="titulo-seccion">
+
+            <h2>Canciones</h2>
+
+            <span id="cantidadCanciones">
+                0 canciones
+            </span>
+
+        </div>
+
+
+        <div
+            class="lista-canciones"
+            id="listaCanciones"
+        >
+
+            <!--
+                Las canciones serán creadas
+                automáticamente mediante JavaScript.
+            -->
+
+        </div>
+
+    </section>
+
+
+    <!-- REPRODUCTOR -->
+    <section
+        class="reproductor"
+        id="reproductor"
+    >
+
+        <!-- PORTADA -->
+        <div class="portada-contenedor">
+
+            <img
+                src="img/portadas/default.jpg"
+                alt="Portada de la canción"
+                id="portadaActual"
+                class="portada"
+            >
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+        <div class="informacion-cancion">
+
+            <div>
+
+                <h2 id="tituloActual">
+                    Ninguna canción
+                </h2>
+
+                <p id="artistaActual">
+                    Selecciona una canción
+                </p>
+
+            </div>
+
+
+            <!-- FAVORITO -->
+            <button
+                class="btn-favorito"
+                id="btnFavorito"
+            >
+                ♡
+            </button>
+
+        </div>
+
+
+        <!-- BARRA DE PROGRESO -->
+        <div class="progreso-contenedor">
+
+            <input
+                type="range"
+                id="barraProgreso"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <div class="tiempos">
+
+                <span id="tiempoActual">
+                    0:00
+                </span>
+
+                <span id="duracion">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+        <div class="controles">
+
+            <button
+                id="btnAleatorio"
+                class="btn-control secundario"
+            >
+                🔀
+            </button>
+
+            <button
+                id="btnAnterior"
+                class="btn-control"
+            >
+                ⏮
+            </button>
+
+            <button
+                id="btnPlay"
+                class="btn-play"
+            >
+                ▶
+            </button>
+
+            <button
+                id="btnSiguiente"
+                class="btn-control"
+            >
+                ⏭
+            </button>
+
+            <button
+                id="btnRepetir"
+                class="btn-control secundario"
+            >
+                🔁
+            </button>
+
+        </div>
+
+
+        <!-- VOLUMEN -->
+        <div class="volumen">
+
+            <span>🔈</span>
+
+            <input
+                type="range"
+                id="barraVolumen"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+            >
+
+            <span>🔊</span>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- BARRA INFERIOR -->
+    <nav class="navegacion">
+
+        <button class="nav-item activo">
+
+            <span>🎵</span>
+
+            <small>
+                Biblioteca
+            </small>
+
+        </button>
+
+
+        <button class="nav-item">
+
+            <span>♡</span>
+
+            <small>
+                Favoritos
+            </small>
+
+        </button>
+
+
+        <button class="nav-item">
+
+            <span>📁</span>
+
+            <small>
+                Playlists
+            </small>
+
+        </button>
+
+
+        <button class="nav-item">
+
+            <span>⚙</span>
+
+            <small>
+                Ajustes
+            </small>
+
+        </button>
+
+    </nav>
+
+</main>
+
+
+<!-- AUDIO -->
+<audio id="audio"></audio>
+
+
+<!-- JAVASCRIPT -->
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

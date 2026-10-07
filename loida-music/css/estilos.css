@@ -1,0 +1,994 @@
+/* ==========================================
+LOIDA MUSIC
+ESTILOS PRINCIPALES
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+:root {
+--fondo: #090909;
+--fondo-secundario: #111111;
+--tarjeta: #171717;
+--tarjeta-hover: #202020;
+
+
+--blanco: #ffffff;
+--texto: #eeeeee;
+--texto-secundario: #9b9b9b;
+
+--dorado: #d6b36a;
+--dorado-claro: #f0d99b;
+
+--borde: rgba(214, 179, 106, 0.18);
+
+--verde: #31d158;
+
+
+}
+
+/* ==========================================
+BODY
+========================================== */
+
+body {
+min-height: 100vh;
+
+
+background:
+    radial-gradient(
+        circle at top,
+        rgba(214, 179, 106, 0.08),
+        transparent 35%
+    ),
+    var(--fondo);
+
+color: var(--texto);
+
+font-family: "Montserrat", sans-serif;
+
+display: flex;
+justify-content: center;
+
+
+}
+
+/* ==========================================
+APLICACIÓN
+========================================== */
+
+.app {
+width: 100%;
+max-width: 480px;
+
+
+min-height: 100vh;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.015),
+        transparent
+    );
+
+position: relative;
+
+padding-bottom: 105px;
+
+overflow-x: hidden;
+
+
+}
+
+/* ==========================================
+ENCABEZADO
+========================================== */
+
+.encabezado {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+
+padding: 28px 22px 18px;
+
+
+}
+
+.saludo {
+font-size: 10px;
+
+
+letter-spacing: 2px;
+
+color: var(--dorado);
+
+font-weight: 600;
+
+
+}
+
+.encabezado h1 {
+margin-top: 5px;
+
+
+font-family: "Cinzel", serif;
+
+font-size: 26px;
+
+color: var(--blanco);
+
+letter-spacing: 0.5px;
+
+
+}
+
+/* ==========================================
+BOTÓN OPCIONES
+========================================== */
+
+.btn-opciones {
+width: 42px;
+height: 42px;
+
+
+border: 1px solid var(--borde);
+
+border-radius: 50%;
+
+background: var(--tarjeta);
+
+color: var(--blanco);
+
+font-size: 25px;
+
+cursor: pointer;
+
+transition: 0.25s;
+
+
+}
+
+.btn-opciones:hover {
+background: var(--tarjeta-hover);
+
+
+border-color: var(--dorado);
+
+transform: scale(1.05);
+
+
+}
+
+/* ==========================================
+BUSCADOR
+========================================== */
+
+.buscador {
+margin: 0 20px 22px;
+
+
+height: 48px;
+
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+padding: 0 15px;
+
+background: var(--tarjeta);
+
+border: 1px solid var(--borde);
+
+border-radius: 15px;
+
+
+}
+
+.icono-busqueda {
+font-size: 25px;
+
+
+color: var(--texto-secundario);
+
+transform: rotate(-20deg);
+
+
+}
+
+.buscador input {
+width: 100%;
+
+
+background: transparent;
+
+border: none;
+
+outline: none;
+
+color: var(--blanco);
+
+font-family: inherit;
+
+font-size: 14px;
+
+
+}
+
+.buscador input::placeholder {
+color: #777;
+}
+
+/* ==========================================
+ACCESOS RÁPIDOS
+========================================== */
+
+.accesos {
+display: grid;
+
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 10px;
+
+padding: 0 20px;
+
+margin-bottom: 28px;
+
+
+}
+
+.acceso {
+border: 1px solid var(--borde);
+
+
+background: var(--tarjeta);
+
+color: var(--texto-secundario);
+
+border-radius: 15px;
+
+padding: 13px 5px;
+
+cursor: pointer;
+
+transition: 0.25s;
+
+
+}
+
+.acceso span {
+display: block;
+
+
+font-size: 20px;
+
+margin-bottom: 5px;
+
+
+}
+
+.acceso small {
+font-size: 10px;
+
+
+font-weight: 600;
+
+
+}
+
+.acceso:hover,
+.acceso.activo {
+border-color: var(--dorado);
+
+
+color: var(--dorado-claro);
+
+background:
+    linear-gradient(
+        145deg,
+        rgba(214, 179, 106, 0.12),
+        rgba(255, 255, 255, 0.02)
+    );
+
+
+}
+
+/* ==========================================
+BIBLIOTECA
+========================================== */
+
+.biblioteca {
+padding: 0 20px;
+}
+
+.titulo-seccion {
+display: flex;
+
+
+align-items: center;
+
+justify-content: space-between;
+
+margin-bottom: 14px;
+
+
+}
+
+.titulo-seccion h2 {
+font-family: "Cinzel", serif;
+
+
+font-size: 18px;
+
+color: var(--blanco);
+
+
+}
+
+.titulo-seccion span {
+font-size: 11px;
+
+
+color: var(--texto-secundario);
+
+
+}
+
+/* ==========================================
+LISTA DE CANCIONES
+========================================== */
+
+.lista-canciones {
+display: flex;
+
+
+flex-direction: column;
+
+gap: 8px;
+
+
+}
+
+/* ==========================================
+CANCIÓN
+========================================== */
+
+.cancion {
+display: flex;
+
+
+align-items: center;
+
+gap: 12px;
+
+padding: 9px;
+
+border-radius: 13px;
+
+border: 1px solid transparent;
+
+cursor: pointer;
+
+transition: 0.25s;
+
+
+}
+
+.cancion:hover {
+background: var(--tarjeta);
+
+
+border-color: var(--borde);
+
+
+}
+
+.cancion.activa {
+background:
+linear-gradient(
+90deg,
+rgba(214, 179, 106, 0.13),
+rgba(214, 179, 106, 0.03)
+);
+
+
+border-color: rgba(214, 179, 106, 0.35);
+
+
+}
+
+/* PORTADA PEQUEÑA */
+
+.cancion-portada {
+width: 48px;
+height: 48px;
+
+
+border-radius: 9px;
+
+object-fit: cover;
+
+flex-shrink: 0;
+
+
+}
+
+/* INFORMACIÓN */
+
+.cancion-info {
+flex: 1;
+
+
+min-width: 0;
+
+
+}
+
+.cancion-info h3 {
+font-size: 13px;
+
+
+color: var(--texto);
+
+white-space: nowrap;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+margin-bottom: 4px;
+
+
+}
+
+.cancion-info p {
+font-size: 10px;
+
+
+color: var(--texto-secundario);
+
+white-space: nowrap;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+
+}
+
+/* DURACIÓN */
+
+.cancion-duracion {
+font-size: 10px;
+
+
+color: var(--texto-secundario);
+
+
+}
+
+/* ==========================================
+REPRODUCTOR
+========================================== */
+
+.reproductor {
+margin: 30px 20px 0;
+
+
+padding: 20px;
+
+background:
+    linear-gradient(
+        145deg,
+        #191919,
+        #101010
+    );
+
+border: 1px solid rgba(214, 179, 106, 0.25);
+
+border-radius: 25px;
+
+box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+position: relative;
+
+
+}
+
+/* ==========================================
+PORTADA
+========================================== */
+
+.portada-contenedor {
+display: flex;
+
+
+justify-content: center;
+
+margin-bottom: 20px;
+
+
+}
+
+.portada {
+width: 100%;
+
+
+max-width: 280px;
+
+aspect-ratio: 1 / 1;
+
+object-fit: cover;
+
+border-radius: 20px;
+
+box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.55);
+
+border: 1px solid rgba(255, 255, 255, 0.08);
+
+transition: transform 0.4s ease;
+
+
+}
+
+.reproductor.reproduciendo .portada {
+transform: scale(1.015);
+}
+
+/* ==========================================
+INFORMACIÓN DE LA CANCIÓN
+========================================== */
+
+.informacion-cancion {
+display: flex;
+
+
+justify-content: space-between;
+
+align-items: center;
+
+gap: 15px;
+
+margin-bottom: 20px;
+
+
+}
+
+.informacion-cancion h2 {
+font-size: 17px;
+
+
+color: var(--blanco);
+
+margin-bottom: 5px;
+
+white-space: nowrap;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+
+}
+
+.informacion-cancion p {
+font-size: 12px;
+
+
+color: var(--texto-secundario);
+
+
+}
+
+/* FAVORITO */
+
+.btn-favorito {
+width: 40px;
+height: 40px;
+
+
+border-radius: 50%;
+
+border: 1px solid var(--borde);
+
+background: var(--tarjeta);
+
+color: var(--texto);
+
+font-size: 22px;
+
+cursor: pointer;
+
+flex-shrink: 0;
+
+transition: 0.25s;
+
+
+}
+
+.btn-favorito:hover,
+.btn-favorito.activo {
+color: var(--dorado-claro);
+
+
+border-color: var(--dorado);
+
+transform: scale(1.05);
+
+
+}
+
+/* ==========================================
+BARRA DE PROGRESO
+========================================== */
+
+.progreso-contenedor {
+margin-bottom: 18px;
+}
+
+#barraProgreso {
+width: 100%;
+
+
+appearance: none;
+
+height: 4px;
+
+background: #3b3b3b;
+
+border-radius: 10px;
+
+outline: none;
+
+cursor: pointer;
+
+
+}
+
+#barraProgreso::-webkit-slider-thumb {
+appearance: none;
+
+
+width: 13px;
+height: 13px;
+
+border-radius: 50%;
+
+background: var(--dorado);
+
+cursor: pointer;
+
+
+}
+
+#barraProgreso::-moz-range-thumb {
+width: 13px;
+height: 13px;
+
+
+border-radius: 50%;
+
+background: var(--dorado);
+
+border: none;
+
+cursor: pointer;
+
+
+}
+
+.tiempos {
+display: flex;
+
+
+justify-content: space-between;
+
+margin-top: 7px;
+
+color: #777;
+
+font-size: 9px;
+
+
+}
+
+/* ==========================================
+CONTROLES
+========================================== */
+
+.controles {
+display: flex;
+
+
+justify-content: center;
+
+align-items: center;
+
+gap: 18px;
+
+margin-bottom: 20px;
+
+
+}
+
+.btn-control,
+.btn-play {
+border: none;
+
+
+background: transparent;
+
+color: var(--blanco);
+
+cursor: pointer;
+
+transition: 0.2s;
+
+
+}
+
+.btn-control {
+font-size: 18px;
+}
+
+.btn-control:hover {
+color: var(--dorado);
+
+
+transform: scale(1.12);
+
+
+}
+
+.btn-control.secundario {
+font-size: 14px;
+
+
+color: #888;
+
+
+}
+
+.btn-play {
+width: 58px;
+height: 58px;
+
+
+border-radius: 50%;
+
+background: var(--blanco);
+
+color: #0a0a0a;
+
+font-size: 21px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+padding-left: 3px;
+
+box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.4);
+
+
+}
+
+.btn-play:hover {
+background: var(--dorado-claro);
+
+
+transform: scale(1.07);
+
+
+}
+
+/* ==========================================
+VOLUMEN
+========================================== */
+
+.volumen {
+display: flex;
+
+
+align-items: center;
+
+gap: 8px;
+
+color: #777;
+
+font-size: 11px;
+
+
+}
+
+#barraVolumen {
+flex: 1;
+
+
+appearance: none;
+
+height: 3px;
+
+background: #3a3a3a;
+
+border-radius: 10px;
+
+outline: none;
+
+
+}
+
+#barraVolumen::-webkit-slider-thumb {
+appearance: none;
+
+
+width: 11px;
+height: 11px;
+
+border-radius: 50%;
+
+background: #aaa;
+
+cursor: pointer;
+
+
+}
+
+#barraVolumen::-moz-range-thumb {
+width: 11px;
+height: 11px;
+
+
+border-radius: 50%;
+
+background: #aaa;
+
+border: none;
+
+cursor: pointer;
+
+
+}
+
+/* ==========================================
+NAVEGACIÓN INFERIOR
+========================================== */
+
+.navegacion {
+position: fixed;
+
+
+bottom: 0;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 100%;
+
+max-width: 480px;
+
+height: 76px;
+
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+align-items: center;
+
+background:
+    rgba(12, 12, 12, 0.94);
+
+backdrop-filter: blur(18px);
+
+-webkit-backdrop-filter: blur(18px);
+
+border-top: 1px solid var(--borde);
+
+z-index: 100;
+
+
+}
+
+.nav-item {
+border: none;
+
+
+background: transparent;
+
+color: #777;
+
+cursor: pointer;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+gap: 5px;
+
+transition: 0.2s;
+
+
+}
+
+.nav-item span {
+font-size: 18px;
+}
+
+.nav-item small {
+font-size: 9px;
+
+
+font-family: "Montserrat", sans-serif;
+
+
+}
+
+.nav-item:hover,
+.nav-item.activo {
+color: var(--dorado-claro);
+}
+
+/* ==========================================
+MENSAJE SIN CANCIONES
+========================================== */
+
+.sin-canciones {
+text-align: center;
+
+
+padding: 35px 15px;
+
+color: #666;
+
+font-size: 12px;
+
+border: 1px dashed #333;
+
+border-radius: 15px;
+
+
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media (min-width: 600px) {
+
+
+body {
+    padding: 30px 0;
+}
+
+.app {
+    min-height: calc(100vh - 60px);
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(214, 179, 106, 0.15);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.navegacion {
+    bottom: 30px;
+
+    border-radius: 0 0 30px 30px;
+}
+
+
+}
